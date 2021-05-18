@@ -1,4 +1,4 @@
-filter_var<br>
+filter_var <a href="https://www.w3schools.com/php/func_filter_var.asp">method</a> <a href="https://www.php.net/manual/en/filter.filters.validate.php">types</a><br>
 mysqli_real_escape_string<br>
 htmlspecialchars<br>
 urlencode<br>
