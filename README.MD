@@ -15,3 +15,8 @@ encryption password
 <script type="text/javascript" src="xss.js"></script>
 <input id="search" onchange="return trim(this)" class="box">
 ```
+
+# Disable inspect element
+```
+<script src="disableinspect.js"></script>
+```
