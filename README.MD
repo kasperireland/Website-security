@@ -20,3 +20,8 @@ encryption password
 ```
 <script src="disableinspect.js"></script>
 ```
+
+# Disbale context menu, dragstart, selectstart
+```
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+```
