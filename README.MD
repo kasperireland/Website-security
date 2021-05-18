@@ -31,7 +31,7 @@ urlencode<br>
 <input type="hidden" name="csrf" value="<?php echo $csrf ?>">
 ```
 
-# Password Encryption & Decruption method 1
+# Password Encryption & Decryption method 1
 ``` 
 // Store a string into the variable which
 // need to be Encrypted
@@ -69,7 +69,7 @@ echo "<br>Decrypted String: " . $decryption;
 outputs: i am megamind
 ```
 
-# Password Encryption & Decruption method 2
+# Password Encryption & Decryption method 2
 ```
 $string = "i am pro";
 echo $string;
