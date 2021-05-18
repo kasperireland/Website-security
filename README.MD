@@ -80,3 +80,25 @@ echo "<br>";
 $base64_decode = base64_decode($base64_encode);
 echo $base64_decode; // outputs: i am pro
 ```
+
+# Password Encryption & Decryption match method 1
+```
+$hash=password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
+if (password_verify('rasmuslerdorf', $hash)) {
+    echo 'Password is valid!';
+} else {
+    echo 'Invalid password.';
+}
+```
+
+
+# Password Encryption & Decryption match method 2
+```
+$hash = '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq';
+
+if (password_verify('rasmuslerdorf', $hash)) {
+    echo 'Password is valid!';
+} else {
+    echo 'Invalid password.';
+}
+```
