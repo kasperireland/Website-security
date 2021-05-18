@@ -30,6 +30,13 @@ urlencode<br>
 <?php include "csrf.php";?> 
 <input type="hidden" name="csrf" value="<?php echo $csrf ?>">
 ```
+# salt
+```
+$password = 'abcdefg';
+ $salt = 'anythingyouwant_';
+ $pw_hash = md5($salt.$password);
+ echo $pw_hash;
+ ```
 
 # Password Encryption & Decryption method 1
 ``` 
