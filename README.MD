@@ -41,4 +41,6 @@ $base64_encode = base64_encode($sha1);
 // $base64_decode = base64_decode($base64_encode);
 $crc32 = crc32($base64_encode);
 $string = 'megamind';
-$pw = $md5.$crc32.$salt.$sha1.$base64_encode;```
+$pw = $md5.$crc32.$salt.$sha1.$base64_encode;
+echo $pw;
+Output: 68cab0e096d60f6eac1ca357dd86c5641642962700megamind1958a94524d5b3b73d18dd3c630aeb2cf94f843aMTk1OGE5NDUyNGQ1YjNiNzNkMThkZDNjNjMwYWViMmNmOTRmODQzYQ==```
