@@ -25,3 +25,9 @@ encryption password
 ```
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 ```
+
+# csrf token prevention
+```
+<?php include "csrf.php";?> 
+<input type="hidden" name="csrf" value="<?php echo $csrf ?>">
+```
