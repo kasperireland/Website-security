@@ -32,14 +32,52 @@ encryption password
 <input type="hidden" name="csrf" value="<?php echo $csrf ?>">
 ```
 
-# Password Encryption
+# Password Encryption & Decruption method 1
+``` 
+// Store a string into the variable which
+// need to be Encrypted
+$simple_string = "i am megamind";  
+// Display the original string
+echo "Original String: " . $simple_string . "\n"; 
+// Store cipher method
+$ciphering = "BF-CBC";  
+// Use OpenSSl encryption method
+$iv_length = openssl_cipher_iv_length($ciphering);
+$options = 0;  
+// Use random_bytes() function which gives
+// randomly 16 digit values
+$encryption_iv = random_bytes($iv_length);  
+// Alternatively, we can use any 16 digit
+// characters or numeric for iv
+$encryption_key = openssl_digest(php_uname(), 'MD5', TRUE);  
+// Encryption of string process starts
+$encryption = openssl_encrypt($simple_string, $ciphering,
+$encryption_key, $options, $encryption_iv); 
+// Display the encrypted string
+echo "<br>Encrypted String: " . $encryption . "\n"; 
+outputs: rFhgIKm0M5e2tutVqyB99A== 
+// Decryption of string process starts
+// Used random_bytes() which gives randomly
+// 16 digit values
+$decryption_iv = random_bytes($iv_length);
+// Store the decryption key
+$decryption_key = openssl_digest(php_uname(), 'MD5', TRUE); 
+// Descrypt the string
+$decryption = openssl_decrypt ($encryption, $ciphering,
+$decryption_key, $options, $encryption_iv);
+// Display the decrypted string
+echo "<br>Decrypted String: " . $decryption;
+outputs: i am megamind
 ```
-$password = "geeks";
-$md5 = md5($password);
-$sha1 = sha1($md5);
-$base64_encode = base64_encode($sha1);
-$crc32 = crc32($base64_encode);
-$string = 'megamind';
-$pw = $md5.$crc32.$salt.$sha1.$base64_encode;
-echo $pw;
-Output: 68cab0e096d60f6eac1ca357dd86c5641642962700megamind1958a94524d5b3b73d18dd3c630aeb2cf94f843aMTk1OGE5NDUyNGQ1YjNiNzNkMThkZDNjNjMwYWViMmNmOTRmODQzYQ==```
+
+# Password Encryption & Decruption method 2
+```
+$string = "i am pro";
+echo $string;
+echo "<br>";
+$base64_encode = base64_encode($string);
+echo $base64_encode; // outputs: aSBhbSBwcm8=
+echo "<br>";
+$base64_decode = base64_decode($base64_encode);
+echo $base64_decode; // outputs: i am pro
+```
