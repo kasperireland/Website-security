@@ -31,3 +31,14 @@ encryption password
 <?php include "csrf.php";?> 
 <input type="hidden" name="csrf" value="<?php echo $csrf ?>">
 ```
+
+# Password Encryption
+```
+$password = "geeks";
+$md5 = md5($password);
+$sha1 = sha1($md5);
+$base64_encode = base64_encode($sha1);
+// $base64_decode = base64_decode($base64_encode);
+$crc32 = crc32($base64_encode);
+$string = 'megamind';
+$pw = $md5.$crc32.$salt.$sha1.$base64_encode;```
